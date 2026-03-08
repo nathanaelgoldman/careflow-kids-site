@@ -429,13 +429,13 @@
         External testing is distributed through Apple TestFlight. Replace the placeholders below with your public links once Apple approves external testing.
       </p>
       <div class="links-grid">
-        <a class="link-card" href="#" aria-disabled="true">
+        <a class="link-card" href="https://testflight.apple.com/join/Ermr7Mrr" target="_blank" rel="noopener noreferrer">
           <strong>CareFlow Kids TestFlight</strong>
-          <span class="placeholder">Add public TestFlight link here</span>
+          <span>Join the CareFlow Kids beta on TestFlight</span>
         </a>
-        <a class="link-card" href="#" aria-disabled="true">
+        <a class="link-card" href="https://testflight.apple.com/join/bjwmMXY1" target="_blank" rel="noopener noreferrer">
           <strong>CareView Kids TestFlight</strong>
-          <span class="placeholder">Add public TestFlight link here</span>
+          <span>Join the CareView Kids beta on TestFlight</span>
         </a>
       </div>
     </div>
@@ -466,7 +466,7 @@
         <div class="contact-list">
           <div><strong>WhatsApp:</strong> +32 475 41 63 94</div>
           <div><strong>WeChat:</strong> yunastic</div>
-          <div><strong>Email:</strong> <span class="placeholder">Add support email</span></div>
+          <div><strong>Email:</strong> <a href="#" id="support-email-link">Contact by email</a></div>
         </div>
       </div>
       <div class="card">
@@ -483,5 +483,18 @@
       <div>CareFlow Kids + CareView Kids — beta testing page</div>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var user = "nathanael.goldman";
+      var domain = "gmail.com";
+      var email = user + "@" + domain;
+      var link = document.getElementById("support-email-link");
+      if (link) {
+        link.href = "mailto:" + email;
+        link.textContent = email;
+      }
+    })();
+  </script>
 </body>
 </html>
