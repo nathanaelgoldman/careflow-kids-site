@@ -492,7 +492,8 @@
       var link = document.getElementById("support-email-link");
       if (link) {
         link.href = "mailto:" + email;
-        link.textContent = email;
+        link.setAttribute("aria-label", email);
+        link.textContent = "Contact by email";
       }
     })();
   </script>
