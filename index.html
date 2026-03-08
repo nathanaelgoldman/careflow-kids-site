@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CareFlow Kids + CareView Kids</title>
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #5b6472;
+      --line: #d7deea;
+      --primary: #4f7cff;
+      --primary-soft: rgba(79, 124, 255, 0.12);
+      --accent: #7c92ff;
+      --shadow: 0 12px 30px rgba(23, 35, 79, 0.08);
+      --radius: 22px;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #f7f9fd 0%, #eef3fb 100%);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .wrap {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      background: rgba(245, 247, 251, 0.8);
+      border-bottom: 1px solid rgba(215, 222, 234, 0.6);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-pill {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      font-size: 0.95rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      padding: 10px 14px;
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      background: var(--card);
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 64px 0 40px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .panel {
+      background: rgba(255,255,255,0.76);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-copy {
+      padding: 36px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.04;
+      letter-spacing: -0.04em;
+    }
+
+    .lede {
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 60ch;
+      margin: 0 0 24px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 18px 0 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 18px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      color: var(--text);
+      font-weight: 600;
+      min-height: 48px;
+    }
+
+    .btn.primary {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      transition: 160ms ease;
+    }
+
+    .small-note {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .hero-card {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 18px;
+    }
+
+    .diagram {
+      background: linear-gradient(180deg, #f8fbff 0%, #f0f5ff 100%);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 20px;
+    }
+
+    .flow {
+      display: grid;
+      gap: 14px;
+    }
+
+    .flow-step {
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      font-weight: 600;
+      box-shadow: 0 6px 18px rgba(50, 73, 138, 0.06);
+    }
+
+    .arrow {
+      text-align: center;
+      color: var(--accent);
+      font-size: 1.3rem;
+      font-weight: 800;
+    }
+
+    section {
+      padding: 28px 0;
+    }
+
+    .section-title {
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin: 0 0 10px;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      margin: 0 0 20px;
+      max-width: 70ch;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      padding: 24px;
+      background: rgba(255,255,255,0.82);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .card ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .link-card {
+      padding: 18px;
+      background: rgba(255,255,255,0.82);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .link-card strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .placeholder {
+      color: #c2410c;
+      font-weight: 700;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 10px;
+      color: var(--muted);
+    }
+
+    footer {
+      padding: 36px 0 64px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    code {
+      background: rgba(79, 124, 255, 0.08);
+      border: 1px solid rgba(79, 124, 255, 0.15);
+      padding: 2px 7px;
+      border-radius: 8px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.92em;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .cards,
+      .split,
+      .links-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <div class="brand">
+        <span class="brand-pill">CareFlow Kids</span>
+        <span>+</span>
+        <span class="brand-pill">CareView Kids</span>
+      </div>
+      <div class="nav-links">
+        <a href="#apps">Apps</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#testflight">TestFlight</a>
+        <a href="./public-docs/">Docs</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero wrap">
+    <div class="hero-grid">
+      <div class="panel hero-copy">
+        <div class="eyebrow">Portable pediatric records • local-first</div>
+        <h1>CareFlow Kids + CareView Kids</h1>
+        <p class="lede">
+          A paired workflow for clinicians and families built around a portable <code>.pemr</code> bundle.
+          The clinician updates the record in CareFlow Kids. Families open the same bundle in CareView Kids to read reports,
+          view growth charts, access documents, and send updated information back.
+        </p>
+        <div class="cta-row">
+          <a class="btn primary" href="#testflight">Join TestFlight</a>
+          <a class="btn" href="./public-docs/">Read documentation</a>
+        </div>
+        <p class="small-note">
+          GitHub Pages URL target: <code>https://nathanaelgoldman.github.io/pedi-ai-assistant-ios/</code>
+        </p>
+      </div>
+
+      <div class="panel hero-card">
+        <h2 class="section-title" style="font-size:1.55rem;margin:0;">How it works</h2>
+        <div class="diagram">
+          <div class="flow">
+            <div class="flow-step">Doctor uses <strong>CareFlow Kids</strong></div>
+            <div class="arrow">↓ export <code>.pemr</code></div>
+            <div class="flow-step">Family opens bundle in <strong>CareView Kids</strong></div>
+            <div class="arrow">↓ notes / documents / re-export</div>
+            <div class="flow-step">Clinician re-imports updated bundle in <strong>CareFlow Kids</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="apps">
+    <div class="wrap">
+      <h2 class="section-title">Two apps, one portable record</h2>
+      <p class="section-subtitle">
+        The system is designed around a cumulative patient bundle rather than a permanent shared cloud account.
+      </p>
+      <div class="cards">
+        <article class="card">
+          <h3>CareFlow Kids</h3>
+          <ul>
+            <li>Create sick visits and well visits</li>
+            <li>Record vitals and growth data</li>
+            <li>Generate patient reports on demand</li>
+            <li>Export portable <code>.pemr</code> bundles</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>CareView Kids</h3>
+          <ul>
+            <li>Open bundles produced by CareFlow Kids</li>
+            <li>Read visit reports and view growth charts</li>
+            <li>Access uploaded documents</li>
+            <li>Add parent notes and export updated bundles</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="workflow">
+    <div class="wrap split">
+      <div class="card">
+        <h3>Key principles</h3>
+        <ul>
+          <li>Local-first architecture</li>
+          <li>Portable cumulative patient bundle</li>
+          <li>No cloud account required for bundle exchange</li>
+          <li>Readable family-facing reports</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>What the bundle contains</h3>
+        <ul>
+          <li>Structured database: <code>db.sqlite</code></li>
+          <li>Bundle metadata: <code>manifest.json</code></li>
+          <li>Attached files in the <code>docs/</code> folder</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="testflight">
+    <div class="wrap">
+      <h2 class="section-title">Join the beta</h2>
+      <p class="section-subtitle">
+        External testing is distributed through Apple TestFlight. Replace the placeholders below with your public links once Apple approves external testing.
+      </p>
+      <div class="links-grid">
+        <a class="link-card" href="#" aria-disabled="true">
+          <strong>CareFlow Kids TestFlight</strong>
+          <span class="placeholder">Add public TestFlight link here</span>
+        </a>
+        <a class="link-card" href="#" aria-disabled="true">
+          <strong>CareView Kids TestFlight</strong>
+          <span class="placeholder">Add public TestFlight link here</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="docs">
+    <div class="wrap split">
+      <div class="card">
+        <h3>Documentation</h3>
+        <p class="section-subtitle" style="margin:0 0 14px;">
+          The technical documentation is already built and can be linked directly from this landing page.
+        </p>
+        <a class="btn" href="./public-docs/">Open documentation</a>
+      </div>
+      <div class="card">
+        <h3>Suggested GitHub Pages setup</h3>
+        <ul>
+          <li><code>/</code> → this landing page</li>
+          <li><code>/public-docs/</code> → MkDocs documentation site</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap split">
+      <div class="card">
+        <h3>Support & contact</h3>
+        <div class="contact-list">
+          <div><strong>WhatsApp:</strong> +32 475 41 63 94</div>
+          <div><strong>WeChat:</strong> yunastic</div>
+          <div><strong>Email:</strong> <span class="placeholder">Add support email</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Privacy note</h3>
+        <p class="section-subtitle" style="margin:0;">
+          CareFlow Kids and CareView Kids are local-first tools. Medical data is stored inside a portable <code>.pemr</code> bundle. Users remain responsible for managing, backing up, and sharing the file appropriately.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div>CareFlow Kids + CareView Kids — beta testing page</div>
+      <div style="margin-top:8px;">Repository: <code>nathanaelgoldman/pedi-ai-assistant-ios</code></div>
+    </div>
+  </footer>
+</body>
+</html>
