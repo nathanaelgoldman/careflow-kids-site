@@ -23,11 +23,17 @@ This privacy policy applies to the applications <strong>CareFlow Kids</strong> a
 <strong>CareView Kids</strong>.
 </p>
 
-<h2>Local‑first design</h2>
+<h2>Local-first design</h2>
 <p>
-These applications follow a <strong>local‑first architecture</strong>. Patient data is stored
+These applications follow a <strong>local-first architecture</strong>. Patient data is stored
 locally on the user’s device inside a portable file called a <strong>.pemr bundle</strong>
 (Portable Electronic Medical Record).
+</p>
+
+<p>
+The structured medical database stored inside the .pemr bundle is
+<strong>encrypted</strong>. In addition, the bundle uses <strong>HMAC / SHA-256 integrity verification</strong>
+to help detect unauthorized modification or corruption of the record.
 </p>
 
 <p>
@@ -73,8 +79,22 @@ sharing of patient data contained in .pemr bundles.
 <h2>Contact</h2>
 <p>
 For questions regarding this privacy policy, please contact:
-<strong>nathanael.goldman@gmail.com</strong>
+<a href="#" id="privacy-email-link">Contact by email</a>
 </p>
+
+<script>
+(function () {
+  var user = "nathanael.goldman";
+  var domain = "gmail.com";
+  var email = user + "@" + domain;
+  var link = document.getElementById("privacy-email-link");
+  if (link) {
+    link.href = "mailto:" + email;
+    link.setAttribute("aria-label", email);
+    link.textContent = "Contact by email";
+  }
+})();
+</script>
 
 </body>
 </html>
