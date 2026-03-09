@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -197,12 +197,6 @@
       transition: 160ms ease;
     }
 
-    .small-note {
-      margin-top: 12px;
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
     .hero-card {
       padding: 24px;
       display: flex;
@@ -308,11 +302,6 @@
       margin-bottom: 6px;
     }
 
-    .placeholder {
-      color: #c2410c;
-      font-weight: 700;
-    }
-
     .contact-list {
       display: grid;
       gap: 10px;
@@ -358,13 +347,13 @@
       </div>
       <div class="nav-links">
         <a href="#apps">Apps</a>
-        <a href="#workflow">Workflow</a>
+        <a href="#workflow">Fonctionnement</a>
         <a href="#testflight">TestFlight</a>
-        <a href="./public-docs/">Docs</a>
+        <a href="../public-docs/">Docs</a>
         <a href="#contact">Contact</a>
         <div class="lang-switch" aria-label="Language switch">
-          <span class="current">EN</span>
-          <a href="./fr/">FR</a>
+          <a href="../">EN</a>
+          <span class="current">FR</span>
         </div>
       </div>
     </div>
@@ -373,28 +362,28 @@
   <header class="hero wrap">
     <div class="hero-grid">
       <div class="panel hero-copy">
-        <div class="eyebrow">Portable pediatric records • local-first</div>
+        <div class="eyebrow">Dossiers pédiatriques portables • local-first</div>
         <h1>CareFlow Kids + CareView Kids</h1>
         <p class="lede">
-          A paired workflow for clinicians and families built around a portable <code>.pemr</code> bundle.
-          The clinician updates the record in CareFlow Kids. Families open the same bundle in CareView Kids to read reports,
-          view growth charts, access documents, and send updated information back.
+          Un workflow partagé pour cliniciens et familles, construit autour d’un bundle portable <code>.pemr</code>.
+          Le clinicien met à jour le dossier dans CareFlow Kids. Les familles ouvrent ensuite le même bundle dans CareView Kids pour lire les rapports,
+          voir les courbes de croissance, accéder aux documents et renvoyer des informations mises à jour.
         </p>
         <div class="cta-row">
-          <a class="btn primary" href="#testflight">Join TestFlight</a>
-          <a class="btn" href="./public-docs/">Read documentation</a>
+          <a class="btn primary" href="#testflight">Rejoindre TestFlight</a>
+          <a class="btn" href="../public-docs/">Lire la documentation</a>
         </div>
       </div>
 
       <div class="panel hero-card">
-        <h2 class="section-title" style="font-size:1.55rem;margin:0;">How it works</h2>
+        <h2 class="section-title" style="font-size:1.55rem;margin:0;">Comment cela fonctionne</h2>
         <div class="diagram">
           <div class="flow">
-            <div class="flow-step">Doctor uses <strong>CareFlow Kids</strong></div>
-            <div class="arrow">↓ export <code>.pemr</code></div>
-            <div class="flow-step">Family opens bundle in <strong>CareView Kids</strong></div>
-            <div class="arrow">↓ notes / documents / re-export</div>
-            <div class="flow-step">Clinician re-imports updated bundle in <strong>CareFlow Kids</strong></div>
+            <div class="flow-step">Le médecin utilise <strong>CareFlow Kids</strong></div>
+            <div class="arrow">↓ export du bundle <code>.pemr</code></div>
+            <div class="flow-step">La famille ouvre le bundle dans <strong>CareView Kids</strong></div>
+            <div class="arrow">↓ notes / documents / réexport</div>
+            <div class="flow-step">Le clinicien réimporte le bundle mis à jour dans <strong>CareFlow Kids</strong></div>
           </div>
         </div>
       </div>
@@ -403,27 +392,27 @@
 
   <section id="apps">
     <div class="wrap">
-      <h2 class="section-title">Two apps, one portable record</h2>
+      <h2 class="section-title">Deux apps, un dossier portable</h2>
       <p class="section-subtitle">
-        The system is designed around a cumulative patient bundle rather than a permanent shared cloud account.
+        Le système repose sur un bundle patient cumulatif plutôt que sur un compte cloud partagé permanent.
       </p>
       <div class="cards">
         <article class="card">
           <h3>CareFlow Kids</h3>
           <ul>
-            <li>Create sick visits and well visits</li>
-            <li>Record vitals and growth data</li>
-            <li>Generate patient reports on demand</li>
-            <li>Export portable <code>.pemr</code> bundles</li>
+            <li>Créer des consultations de maladie et des visites de suivi</li>
+            <li>Enregistrer les constantes et les données de croissance</li>
+            <li>Générer des rapports patient à la demande</li>
+            <li>Exporter des bundles portables <code>.pemr</code></li>
           </ul>
         </article>
         <article class="card">
           <h3>CareView Kids</h3>
           <ul>
-            <li>Open bundles produced by CareFlow Kids</li>
-            <li>Read visit reports and view growth charts</li>
-            <li>Access uploaded documents</li>
-            <li>Add parent notes and export updated bundles</li>
+            <li>Ouvrir des bundles produits par CareFlow Kids</li>
+            <li>Lire les rapports de visite et voir les courbes de croissance</li>
+            <li>Accéder aux documents ajoutés</li>
+            <li>Ajouter des notes parentales et exporter les bundles mis à jour</li>
           </ul>
         </article>
       </div>
@@ -433,21 +422,21 @@
   <section id="workflow">
     <div class="wrap split">
       <div class="card">
-        <h3>Key principles</h3>
+        <h3>Principes clés</h3>
         <ul>
-          <li>Local-first architecture</li>
-          <li>Portable cumulative patient bundle</li>
-          <li>No cloud account required for bundle exchange</li>
-          <li>Readable family-facing reports</li>
+          <li>Architecture local-first</li>
+          <li>Bundle patient cumulatif et portable</li>
+          <li>Aucun compte cloud requis pour l’échange du bundle</li>
+          <li>Rapports lisibles pour les familles</li>
         </ul>
       </div>
       <div class="card">
-        <h3>What families can do</h3>
+        <h3>Ce que les familles peuvent faire</h3>
         <ul>
-          <li>Open bundles produced by CareFlow Kids</li>
-          <li>Read visit reports and view growth charts</li>
-          <li>Access and add documents</li>
-          <li>Add parent notes and return the updated bundle to the clinician</li>
+          <li>Ouvrir les bundles produits par CareFlow Kids</li>
+          <li>Lire les rapports de visite et voir les courbes de croissance</li>
+          <li>Accéder aux documents et en ajouter</li>
+          <li>Ajouter des notes parentales et renvoyer le bundle mis à jour au clinicien</li>
         </ul>
       </div>
     </div>
@@ -455,18 +444,18 @@
 
   <section id="testflight">
     <div class="wrap">
-      <h2 class="section-title">Join the beta</h2>
+      <h2 class="section-title">Rejoindre la bêta</h2>
       <p class="section-subtitle">
-        External testing is distributed through Apple TestFlight.
+        Le test externe est distribué via Apple TestFlight.
       </p>
       <div class="links-grid">
         <a class="link-card" href="https://testflight.apple.com/join/Ermr7Mrr" target="_blank" rel="noopener noreferrer">
           <strong>CareFlow Kids TestFlight</strong>
-          <span>Join the CareFlow Kids beta on TestFlight</span>
+          <span>Rejoindre la bêta CareFlow Kids sur TestFlight</span>
         </a>
         <a class="link-card" href="https://testflight.apple.com/join/bjwmMXY1" target="_blank" rel="noopener noreferrer">
           <strong>CareView Kids TestFlight</strong>
-          <span>Join the CareView Kids beta on TestFlight</span>
+          <span>Rejoindre la bêta CareView Kids sur TestFlight</span>
         </a>
       </div>
     </div>
@@ -477,14 +466,14 @@
       <div class="card">
         <h3>Documentation</h3>
         <p class="section-subtitle" style="margin:0 0 14px;">
-          The technical documentation is already built and can be linked directly from this landing page.
+          La documentation technique complète est disponible en ligne depuis cette page.
         </p>
-        <a class="btn" href="./public-docs/">Open documentation</a>
+        <a class="btn" href="../public-docs/">Ouvrir la documentation</a>
       </div>
       <div class="card">
-        <h3>For testers</h3>
+        <h3>Pour les testeurs</h3>
         <p class="section-subtitle" style="margin:0;">
-          Use this page for the overview and TestFlight access. Use the full documentation for detailed workflows, privacy and security notes, and troubleshooting for both CareFlow Kids and CareView Kids.
+          Utilisez cette page pour la vue d’ensemble et l’accès TestFlight. Utilisez la documentation complète pour les workflows détaillés, les notes de confidentialité et sécurité, et le dépannage de CareFlow Kids et CareView Kids.
         </p>
       </div>
     </div>
@@ -495,15 +484,15 @@
       <div class="card">
         <h3>Support & contact</h3>
         <div class="contact-list">
-          <div><strong>WhatsApp:</strong> +32 475 41 63 94</div>
-          <div><strong>WeChat:</strong> yunastic</div>
-          <div><strong>Email:</strong> <a href="#" id="support-email-link">Contact by email</a></div>
+          <div><strong>WhatsApp :</strong> +32 475 41 63 94</div>
+          <div><strong>WeChat :</strong> yunastic</div>
+          <div><strong>Email :</strong> <a href="#" id="support-email-link">Contacter par email</a></div>
         </div>
       </div>
       <div class="card">
-        <h3>Privacy note</h3>
+        <h3>Note de confidentialité</h3>
         <p class="section-subtitle" style="margin:0;">
-          CareFlow Kids and CareView Kids are local-first tools. Medical data is stored inside a portable <code>.pemr</code> bundle. Users remain responsible for managing, backing up, and sharing the file appropriately.
+          CareFlow Kids et CareView Kids sont des outils local-first. Les données médicales sont stockées dans un bundle portable <code>.pemr</code>. Les utilisateurs restent responsables de la gestion, de la sauvegarde et du partage appropriés du fichier.
         </p>
       </div>
     </div>
@@ -511,7 +500,7 @@
 
   <footer>
     <div class="wrap">
-      <div>CareFlow Kids + CareView Kids — beta testing page</div>
+      <div>CareFlow Kids + CareView Kids — page de test bêta</div>
     </div>
   </footer>
 
@@ -524,7 +513,7 @@
       if (link) {
         link.href = "mailto:" + email;
         link.setAttribute("aria-label", email);
-        link.textContent = "Contact by email";
+        link.textContent = "Contacter par email";
       }
     })();
   </script>
