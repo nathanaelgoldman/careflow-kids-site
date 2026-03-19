@@ -20,7 +20,7 @@
     
     
       
-        <title>System Overview - CareFlow Kids & CareView Kids Documentation</title>
+        <title>System Overview - CareFlow Kids & CareView Family Documentation</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#careflow-kids-careview-kids-system-map" class="md-skip">
+        <a href="#careflow-kids-careview-family-system-map" class="md-skip">
           Skip to content
         </a>
       
@@ -80,7 +80,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="CareFlow Kids &amp; CareView Kids Documentation" class="md-header__button md-logo" aria-label="CareFlow Kids & CareView Kids Documentation" data-md-component="logo">
+    <a href=".." title="CareFlow Kids &amp; CareView Family Documentation" class="md-header__button md-logo" aria-label="CareFlow Kids & CareView Family Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -94,7 +94,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            CareFlow Kids & CareView Kids Documentation
+            CareFlow Kids & CareView Family Documentation
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -180,13 +180,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="CareFlow Kids &amp; CareView Kids Documentation" class="md-nav__button md-logo" aria-label="CareFlow Kids & CareView Kids Documentation" data-md-component="logo">
+    <a href=".." title="CareFlow Kids &amp; CareView Family Documentation" class="md-nav__button md-logo" aria-label="CareFlow Kids & CareView Family Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    CareFlow Kids & CareView Kids Documentation
+    CareFlow Kids & CareView Family Documentation
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -289,9 +289,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#careview-kids-patient-app" class="md-nav__link">
+  <a href="#careview-family-patient-app" class="md-nav__link">
     <span class="md-ellipsis">
-      CareView Kids (Patient App)
+      CareView Family (Patient App)
     </span>
   </a>
   
@@ -1524,7 +1524,7 @@
   
   
   <span class="md-ellipsis">
-    CareView Kids (Patient App)
+    CareView Family (Patient App)
     
   </span>
   
@@ -1535,7 +1535,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
-            CareView Kids (Patient App)
+            CareView Family (Patient App)
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -2346,9 +2346,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#careview-kids-patient-app" class="md-nav__link">
+  <a href="#careview-family-patient-app" class="md-nav__link">
     <span class="md-ellipsis">
-      CareView Kids (Patient App)
+      CareView Family (Patient App)
     </span>
   </a>
   
@@ -2402,7 +2402,7 @@
 
 
 
-<h1 id="careflow-kids-careview-kids-system-map">CareFlow Kids / CareView Kids System Map</h1>
+<h1 id="careflow-kids-careview-family-system-map">CareFlow Kids / CareView Family System Map</h1>
 <p>This document explains how the system components interact.</p>
 <h2 id="applications">Applications</h2>
 <h3 id="careflow-kids-doctor-app">CareFlow Kids (Doctor App)</h3>
@@ -2419,7 +2419,7 @@
 <p>Documentation:
 - <a href="../02-doctor-app/">Doctor App Guide</a></p>
 <hr />
-<h3 id="careview-kids-patient-app">CareView Kids (Patient App)</h3>
+<h3 id="careview-family-patient-app">CareView Family (Patient App)</h3>
 <p>Viewer application used by parents or patients.</p>
 <p>Capabilities:</p>
 <ul>
@@ -2449,7 +2449,7 @@
 <h2 id="data-flow">Data Flow</h2>
 <pre class="mermaid"><code>flowchart LR
   CF[CareFlow Kids] --&gt;|Export .pemr| PEMR[.pemr bundle]
-  PEMR --&gt;|Open .pemr| CV[CareView Kids]
+  PEMR --&gt;|Open .pemr| CV[CareView Family]
   CV --&gt;|Export updated .pemr| PEMR
   PEMR --&gt;|Import .pemr| CF</code></pre>
 <hr />

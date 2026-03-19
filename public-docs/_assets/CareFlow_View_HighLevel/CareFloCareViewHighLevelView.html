@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portable Pediatric Medical Record Workflow</title>
+  <style>
+    body {
+      margin: 0;
+      background: #f5f7fb;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #1f2937;
+    }
+    .wrap {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 28px;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 32px;
+      letter-spacing: -0.03em;
+    }
+    p {
+      margin: 0 0 18px;
+      color: #5b6472;
+      font-size: 16px;
+    }
+    svg {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 24px;
+      box-shadow: 0 16px 36px rgba(23, 35, 79, 0.10);
+      background: #f5f7fb;
+    }
+    .title {
+      font-size: 22px;
+      font-weight: 700;
+      fill: #1f2937;
+    }
+    .subtitle {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      fill: #5b6472;
+      text-transform: uppercase;
+    }
+    .panel-title {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      fill: #1f2937;
+    }
+    .panel-sub {
+      font-size: 14px;
+      font-weight: 600;
+      fill: #5b6472;
+    }
+    .item {
+      font-size: 18px;
+      font-weight: 600;
+      fill: #1f2937;
+    }
+    .bundle-title {
+      font-size: 24px;
+      font-weight: 800;
+      fill: #1f2937;
+    }
+    .bundle-sub {
+      font-size: 16px;
+      font-weight: 600;
+      fill: #5b6472;
+    }
+    .mini {
+      font-size: 15px;
+      font-weight: 600;
+      fill: #1f2937;
+    }
+    .chip {
+      font-size: 14px;
+      font-weight: 700;
+      fill: #4f7cff;
+    }
+    .arrow-label {
+      font-size: 14px;
+      font-weight: 700;
+      fill: #4f7cff;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Portable Pediatric Medical Record Workflow</h1>
+    <p>CareFlow Kids and CareView Family exchange an encrypted <strong>.pemr</strong> bundle that remains portable, cumulative, and local-first.</p>
+
+    <svg viewBox="0 0 1500 1040" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Portable pediatric medical record workflow diagram">
+      <defs>
+        <linearGradient id="cfGrad" x1="0" x2="1">
+          <stop offset="0%" stop-color="#eef3ff"/>
+          <stop offset="100%" stop-color="#e4edff"/>
+        </linearGradient>
+        <linearGradient id="cvGrad" x1="0" x2="1">
+          <stop offset="0%" stop-color="#f2f3ff"/>
+          <stop offset="100%" stop-color="#eceaff"/>
+        </linearGradient>
+        <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#1f2937" flood-opacity="0.10"/>
+        </filter>
+        <marker id="arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 1 L 8 5 L 0 9 z" fill="#1f2937" />
+        </marker>
+        <marker id="blueArrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 1 L 8 5 L 0 9 z" fill="#4f7cff" />
+        </marker>
+      </defs>
+
+      <!-- Main panels -->
+      <rect x="30" y="40" rx="30" ry="30" width="550" height="620" fill="url(#cfGrad)" stroke="#d7deea" stroke-width="2" filter="url(#shadow)" />
+      <rect x="820" y="40" rx="30" ry="30" width="550" height="620" fill="url(#cvGrad)" stroke="#d7deea" stroke-width="2" filter="url(#shadow)" />
+
+      <!-- Titles -->
+      <text x="70" y="95" class="panel-title">CareFlow Kids</text>
+      <text x="71" y="122" class="panel-sub">Clinician app</text>
+      <text x="860" y="95" class="panel-title">CareView Family</text>
+      <text x="861" y="122" class="panel-sub">Family app</text>
+
+      <!-- CareFlow content blocks -->
+      <rect x="50" y="150" rx="22" ry="22" width="170" height="120" fill="#ffffff" stroke="#cfd8ea" stroke-width="2" />
+      <text x="135" y="198" text-anchor="middle" class="item">New patient</text>
+      <text x="135" y="226" text-anchor="middle" class="item">badge</text>
+
+      <rect x="70" y="315" rx="22" ry="22" width="210" height="120" fill="#ffffff" stroke="#cfd8ea" stroke-width="2" />
+      <text x="175" y="363" text-anchor="middle" class="item">Create new</text>
+      <text x="175" y="391" text-anchor="middle" class="item">patient bundle</text>
+
+      <rect x="360" y="145" rx="18" ry="18" width="140" height="84" fill="#ffffff" stroke="#cfd8ea" stroke-width="2" />
+      <text x="430" y="178" text-anchor="middle" class="chip">Doctor</text>
+
+      <rect x="330" y="300" rx="22" ry="22" width="350" height="170" fill="#ffffff" stroke="#cfd8ea" stroke-width="2" />
+      <text x="505" y="348" text-anchor="middle" class="item">Create sick &amp; well visits</text>
+      <text x="505" y="380" text-anchor="middle" class="item">Record vitals</text>
+      <text x="505" y="412" text-anchor="middle" class="item">Record growth parameters</text>
+      <text x="505" y="444" text-anchor="middle" class="item">Generate reports</text>
+
+      <rect x="95" y="545" rx="22" ry="22" width="360" height="170" fill="#ffffff" stroke="#cfd8ea" stroke-width="2" />
+      <text x="275" y="593" text-anchor="middle" class="item">Optional AI querying</text>
+      <text x="275" y="625" text-anchor="middle" class="item">Optional guideline creation for</text>
+      <text x="275" y="657" text-anchor="middle" class="item">flagging</text>
+      <text x="275" y="689" text-anchor="middle" class="item">Flagging abnormal vitals for age</text>
+      <text x="275" y="721" text-anchor="middle" class="item">Growth trend analysis</text>
+
+      <!-- CareView content block -->
+      <rect x="1080" y="310" rx="22" ry="22" width="360" height="170" fill="#ffffff" stroke="#cfd8ea" stroke-width="2" />
+      <text x="1260" y="358" text-anchor="middle" class="item">View visits and reports</text>
+      <text x="1260" y="390" text-anchor="middle" class="item">View growth charts</text>
+      <text x="1260" y="422" text-anchor="middle" class="item">View and upload documents</text>
+      <text x="1260" y="454" text-anchor="middle" class="item">Write parent’s notes</text>
+
+      <!-- Bundle card -->
+      <rect x="830" y="760" rx="22" ry="22" width="290" height="150" fill="#ffffff" stroke="#cfd8ea" stroke-width="2.5" filter="url(#shadow)" />
+      <text x="975" y="810" text-anchor="middle" class="mini">-</text>
+      <text x="975" y="840" text-anchor="middle" class="mini">db.sqlite</text>
+      <text x="975" y="872" text-anchor="middle" class="mini">-</text>
+      <text x="975" y="902" text-anchor="middle" class="mini">Manifest.json</text>
+      <text x="975" y="934" text-anchor="middle" class="mini">-</text>
+      <text x="975" y="964" text-anchor="middle" class="mini">Docs folder</text>
+      <text x="975" y="1005" text-anchor="middle" class="bundle-sub">.pemr file</text>
+
+      <!-- Side action chips -->
+      <rect x="650" y="108" rx="18" ry="18" width="180" height="120" fill="#ffffff" stroke="#cfd8ea" stroke-width="2" />
+      <text x="740" y="150" text-anchor="middle" class="chip">Import</text>
+      <text x="740" y="182" text-anchor="middle" class="chip">existing</text>
+      <text x="740" y="214" text-anchor="middle" class="chip">bundle</text>
+
+      <rect x="885" y="108" rx="18" ry="18" width="180" height="120" fill="#ffffff" stroke="#cfd8ea" stroke-width="2" />
+      <text x="975" y="150" text-anchor="middle" class="chip">Export a</text>
+      <text x="975" y="182" text-anchor="middle" class="chip">bundle</text>
+
+      <rect x="650" y="620" rx="18" ry="18" width="180" height="120" fill="#ffffff" stroke="#cfd8ea" stroke-width="2" />
+      <text x="740" y="662" text-anchor="middle" class="chip">Export a</text>
+      <text x="740" y="694" text-anchor="middle" class="chip">bundle</text>
+
+      <rect x="885" y="620" rx="18" ry="18" width="180" height="120" fill="#ffffff" stroke="#cfd8ea" stroke-width="2" />
+      <text x="975" y="662" text-anchor="middle" class="chip">Import</text>
+      <text x="975" y="694" text-anchor="middle" class="chip">existing</text>
+      <text x="975" y="726" text-anchor="middle" class="chip">bundle</text>
+
+      <!-- Arrows matching original diagram logic exactly -->
+      <path d="M220,210 L360,210" stroke="#1f2937" stroke-width="3.2" fill="none" marker-end="url(#arrow)"/>
+      <path d="M136,270 C136,340 136,340 136,315" stroke="#1f2937" stroke-width="3.2" fill="none" marker-end="url(#arrow)"/>
+      <path d="M220,370 L330,370" stroke="#1f2937" stroke-width="3.2" fill="none" marker-end="url(#arrow)"/>
+      <path d="M500,229 L550,300" stroke="#1f2937" stroke-width="3.2" fill="none" marker-end="url(#arrow)"/>
+      <path d="M275,545 C320,500 350,470 470,470" stroke="#1f2937" stroke-width="3.2" fill="none" marker-end="url(#arrow)"/>
+      <path d="M680,385 C760,430 740,560 740,620" stroke="#1f2937" stroke-width="3.2" fill="none" marker-end="url(#arrow)"/>
+      <path d="M740,228 L500,228" stroke="#1f2937" stroke-width="3.2" fill="none" marker-end="url(#arrow)"/>
+      <path d="M920,108 C920,60 850,55 790,55 L140,55 L140,150" stroke="#1f2937" stroke-width="3.2" fill="none" marker-end="url(#arrow)"/>
+      <path d="M1065,168 C1230,168 1315,220 1315,310" stroke="#1f2937" stroke-width="3.2" fill="none" marker-end="url(#arrow)"/>
+      <path d="M1065,710 C1210,710 1260,600 1260,480" stroke="#1f2937" stroke-width="3.2" fill="none" marker-end="url(#arrow)"/>
+      <path d="M740,740 C740,770 770,790 830,835" stroke="#1f2937" stroke-width="3.2" fill="none" marker-end="url(#arrow)"/>
+      <path d="M975,760 C975,740 975,740 975,740" stroke="#1f2937" stroke-width="3.2" fill="none" marker-end="url(#arrow)"/>
+      <path d="M920,835 C900,800 880,780 870,740" stroke="#1f2937" stroke-width="3.2" fill="none" marker-end="url(#arrow)"/>
+    </svg>
+  </div>
+</body>
+</html>
